@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://crq24h10iy12c"]
+
+[ext_resource type="PackedScene" uid="uid://vq7sh6ygelxt" path="res://scenes/player/lucy.tscn" id="1_ynwco"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sovsj"]
+size = Vector2(1200, 80)
+
+[node name="MovementTest" type="Node2D" unique_id=2035294956]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=767879048]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1598788834]
+position = Vector2(0, 300)
+shape = SubResource("RectangleShape2D_sovsj")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ground" unique_id=820316700]
+color = Color(0.2509804, 0.91764706, 0.17254902, 1)
+polygon = PackedVector2Array(-602, 336, -601, 254, 599, 258, 599, 343)
+
+[node name="Lucy" parent="." unique_id=1897270432 instance=ExtResource("1_ynwco")]
+position = Vector2(-43, 135)

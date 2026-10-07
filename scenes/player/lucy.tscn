@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://vq7sh6ygelxt"]
+
+[ext_resource type="Script" uid="uid://drwm8qhpbimg3" path="res://scripts/player/lucy.gd" id="1_kyic2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sovsj"]
+
+[node name="Lucy" type="CharacterBody2D" unique_id=1897270432]
+script = ExtResource("1_kyic2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1284855565]
+rotation = 1.5713577
+shape = SubResource("CapsuleShape2D_sovsj")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=360974626]
+color = Color(0.20392157, 0.12156863, 0.08627451, 1)
+polygon = PackedVector2Array(-14, 10, -13, -10, 14, -10, 14, 10)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1079023205]
