@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://vq7sh6ygelxt" path="res://scenes/player/lucy.tscn" id="1_ynwco"]
 [ext_resource type="PackedScene" uid="uid://d21o7yupcv6li" path="res://scenes/collectibles/magic_orb.tscn" id="2_5b0qw"]
 [ext_resource type="PackedScene" uid="uid://c53225a0kw8mr" path="res://scenes/environment/breakable_block.tscn" id="3_dq4mi"]
+[ext_resource type="PackedScene" uid="uid://ci4mb8x5btesq" path="res://scenes/enemies/enemy.tscn" id="4_vp08v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sovsj"]
 size = Vector2(2283, 80)
@@ -45,3 +46,15 @@ position = Vector2(450, 233)
 
 [node name="BreakableBlock3" parent="." unique_id=842548402 instance=ExtResource("3_dq4mi")]
 position = Vector2(499, 233)
+
+[node name="Enemy" parent="." unique_id=23021918 instance=ExtResource("4_vp08v")]
+position = Vector2(220, 234)
+
+[node name="Enemy2" parent="." unique_id=289265327 instance=ExtResource("4_vp08v")]
+position = Vector2(804, 237)
+
+[node name="Enemy3" parent="." unique_id=1376824318 instance=ExtResource("4_vp08v")]
+position = Vector2(1170, 237)
+
+[node name="Enemy4" parent="." unique_id=1595527074 instance=ExtResource("4_vp08v")]
+position = Vector2(1231, 238)

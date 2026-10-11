@@ -41,6 +41,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	check_charge_collisions()
+	check_stomp_collisions()
 
 func handle_charge_input() -> void:
 	if Input.is_action_just_pressed("charge") \
@@ -115,6 +116,34 @@ func check_charge_collisions() -> void:
 
 		if collider.has_method("break_block"):
 			collider.break_block()
-
-			# Preserve charge speed after hitting a block.
 			velocity.x = charge_direction * charge_speed
+
+		elif collider.has_method("hit_by_charge"):
+			collider.hit_by_charge()
+			velocity.x = charge_direction * charge_speed
+			
+@export_category("Combat")
+@export var stomp_bounce_velocity := -350.0
+
+
+func check_stomp_collisions() -> void:
+	if is_charging:
+		return
+	for i in get_slide_collision_count():
+		var collision := get_slide_collision(i)
+		var collider := collision.get_collider()
+
+		if not collider.has_method("stomp"):
+			continue
+
+		# The collision normal points upward when Lucy
+		# lands on top of an enemy.
+		if collision.get_normal().y < -0.7:
+			var power_reward: float = collider.stomp()
+
+			add_charge_power(power_reward)
+
+			# Bounce Lucy upward.
+			velocity.y = stomp_bounce_velocity
+
+			break
