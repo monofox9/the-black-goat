@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://d21o7yupcv6li"]
+
+[ext_resource type="Script" uid="uid://cflag3lftetgo" path="res://scripts/gameplay/magic_orb.gd" id="1_6l52m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8uldj"]
+radius = 12.0
+
+[node name="MagicOrb" type="Area2D" unique_id=1635543999]
+script = ExtResource("1_6l52m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=533405607]
+shape = SubResource("CircleShape2D_8uldj")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=391828011]
+color = Color(1, 0.23529412, 1, 1)
+polygon = PackedVector2Array(-12, 0, 0, -12, 12, 0, 0, 12)

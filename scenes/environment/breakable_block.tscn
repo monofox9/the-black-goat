@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c53225a0kw8mr"]
+
+[ext_resource type="Script" uid="uid://cr5va5tg1bl34" path="res://scripts/environment/breakable_block.gd" id="1_1fws0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uldj"]
+size = Vector2(48, 48)
+
+[node name="BreakableBlock" type="StaticBody2D" unique_id=1929694637]
+script = ExtResource("1_1fws0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1333604011]
+shape = SubResource("RectangleShape2D_8uldj")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=2011710510]
+color = Color(0.2901961, 0.3372549, 1, 1)
+polygon = PackedVector2Array(-23, -23, 23, -23, 23, 24, -24, 24)
